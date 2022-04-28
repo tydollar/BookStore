@@ -3,15 +3,16 @@ using BookStore.Api.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace BookStore.Test
 {
     [TestClass]
     public class BookServiceTest
     {
-       
+
         private DbContextOptions<BookStoreContext> dbContextOptions;
-        
+
         public BookServiceTest()
         {
             dbContextOptions = new DbContextOptionsBuilder<BookStoreContext>()
@@ -19,7 +20,7 @@ namespace BookStore.Test
                 .Options;
             using (var context = new BookStoreContext(dbContextOptions))
             {
-              
+
                 context.Book.Add(new Book
                 {
                     AuthorFirstName = "Tyler",
@@ -53,27 +54,27 @@ namespace BookStore.Test
 
         }
         [TestMethod]
-        public void GetBooksByPublisherTest()
+        public async Task GetBooksByPublisherTest()
         {
             using (var context = new BookStoreContext(dbContextOptions))
             {
                 var service = new BookService(context);
 
-                var books =service.GetBooksByPublisher();
+                var books = await service.GetBooksByPublisher();
                 Assert.IsNotNull(books);
                 Assert.IsTrue(books[0].Publisher == "A Pub");
             }
- 
+
         }
 
         [TestMethod]
-        public void GetBooksByAuthorTest()
+        public async Task GetBooksByAuthorTest()
         {
             using (var context = new BookStoreContext(dbContextOptions))
             {
                 var service = new BookService(context);
 
-                var books = service.GetBooksByAuthor();
+                var books = await service.GetBooksByAuthor();
                 Assert.IsNotNull(books);
                 Assert.IsTrue(books[0].Publisher == "Cest Pub");
             }
@@ -81,21 +82,21 @@ namespace BookStore.Test
         }
 
         [TestMethod]
-        public void GetBooksAllPriceTest()
+        public async Task GetBooksAllPriceTest()
         {
             using (var context = new BookStoreContext(dbContextOptions))
             {
                 var service = new BookService(context);
 
-                var price = service.GetAllBooksPrice();
-                 
+                var price = await service.GetAllBooksPrice();
+
                 Assert.IsTrue(price == 5);
             }
 
         }
 
         [TestMethod]
-        public void AddBooksTest()
+        public async Task AddBooksTest()
         {
             using (var context = new BookStoreContext(dbContextOptions))
             {
@@ -106,9 +107,9 @@ namespace BookStore.Test
                     new Book{ Id = 22, Price =1m,AuthorFirstName="Ty",AuthorLastName="G",Title="R"},
                     new Book{ Id = 11, Price =1m,AuthorFirstName="Ty",AuthorLastName="G",Title="R"}
                 };
-                service.AddBooks(listBooks);
-
-                Assert.IsTrue(service.GetBooksByPublisher().Count  == 6);
+                await service.AddBooks(listBooks);
+                var bookCount = await service.GetBooksByPublisher();
+                Assert.IsTrue(bookCount.Count == 6);
             }
 
         }

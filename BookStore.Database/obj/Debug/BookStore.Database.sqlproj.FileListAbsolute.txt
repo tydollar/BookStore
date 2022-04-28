@@ -8,3 +8,9 @@ C:\Users\tyler\source\repos\BookStore\BookStore.Database\obj\Debug\Model.xml
 C:\Users\tyler\source\repos\BookStore\BookStore.Database\obj\Debug\refactor.xml
 C:\Users\tyler\source\repos\BookStore\BookStore.Database\obj\Debug\postdeploy.sql
 C:\Users\tyler\source\repos\BookStore\BookStore.Database\obj\Debug\predeploy.sql
+C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Database\bin\Debug\BookStore.Database.dacpac
+C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Database\bin\Debug\BookStore.Database.dll
+C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Database\bin\Debug\BookStore.Database.pdb
+C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Database\obj\Debug\BookStore.Database.sqlproj.AssemblyReference.cache
+C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Database\obj\Debug\BookStore.Database.dll
+C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Database\obj\Debug\BookStore.Database.pdb

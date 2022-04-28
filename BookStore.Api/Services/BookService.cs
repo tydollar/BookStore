@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace BookStore.Api.Services
 {
@@ -13,49 +14,50 @@ namespace BookStore.Api.Services
             dbContext = context;
         }
         
-        public List<Book> GetBooksByPublisher()
+        public async Task<List<Book>> GetBooksByPublisher()
         {
-            return dbContext.Book
+            return await dbContext.Book
                 .OrderBy(x => x.Publisher)
                 .ThenBy(x => x.AuthorLastName)
                 .ThenBy(x => x.AuthorFirstName)
                 .ThenBy(x => x.Title)
-                .ToList();
+                .ToListAsync();
             
         }
 
-        public List<Book> GetBooksByAuthor()
+        public async Task<List<Book>> GetBooksByAuthor()
         {
-            return dbContext.Book
+            return await dbContext.Book
                 .OrderBy(x => x.AuthorLastName)
                 .ThenBy(x => x.AuthorFirstName)
                 .ThenBy(x => x.Title)
-                .ToList();
+                .ToListAsync();
 
         }
 
-        public decimal GetAllBooksPrice()
+        public async Task<decimal> GetAllBooksPrice()
         {
-            return dbContext.Book.Sum(x => x.Price);
+            return await dbContext.Book.SumAsync(x => x.Price);
                 
         }
 
 
-        public List<Book> GetBooksByAuthorUsingSproc()
+        public async Task<List<Book>> GetBooksByAuthorUsingSproc()
         {
-            List<Book> books= dbContext.Book.FromSqlRaw("usp_GetAllBooksByAuthor").ToList();
+            List<Book> books=await dbContext.Book.FromSqlRaw("usp_GetAllBooksByAuthor").ToListAsync();
             return books;
         }
-        public List<Book> GetBooksByPublisherUsingSproc()
+        public async Task<List<Book>> GetBooksByPublisherUsingSproc()
         {
-            List<Book> books = dbContext.Book.FromSqlRaw("usp_GetAllBooksByPublisher").ToList();
+            List<Book> books = await dbContext.Book.FromSqlRaw("usp_GetAllBooksByPublisher").ToListAsync();
             return books;
         }
 
-        public void AddBooks(List<Book> books)
+        public async Task AddBooks(List<Book> books)
         {
-            dbContext.Book.AddRange(books);
-            dbContext.SaveChanges();
+            await dbContext.Book.AddRangeAsync(books);
+            await dbContext.SaveChangesAsync();
+            
         }
     }
 }

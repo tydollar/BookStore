@@ -24,35 +24,36 @@ namespace BookStore.Api.Controllers
         }
 
         [HttpGet("BooksByPublisher")]
-        public IEnumerable<Book> GetBooksByPublisher()
+        public async Task<IActionResult> GetBooksByPublisher()
         {
-            return _bookService.GetBooksByPublisher();
+            return Ok(_bookService.GetBooksByPublisher());
         }
         [HttpGet("BooksByPublisher")]
-        public IEnumerable<Book> GetBooksByAuthor()
+        public async Task<IActionResult> GetBooksByAuthor()
         {
-            return _bookService.GetBooksByAuthor();
+            return Ok(await _bookService.GetBooksByAuthor());
         }
         [HttpGet("BooksByPublisherUsingSproc")]
-        public IEnumerable<Book> GetBooksByPublisherUsingSproc()
+        public async Task<IActionResult> GetBooksByPublisherUsingSproc()
         {
-            return _bookService.GetBooksByPublisherUsingSproc();
+            return Ok(await _bookService.GetBooksByPublisherUsingSproc());
         }
         [HttpGet("BooksByAuthorUsingSproc")]
-        public IEnumerable<Book> GetBooksByAuthorUsingSproc()
+        public async Task<IActionResult> GetBooksByAuthorUsingSproc()
         {
-            return _bookService.GetBooksByAuthorUsingSproc();
+            return Ok(await _bookService.GetBooksByAuthorUsingSproc());
         }
 
         [HttpGet("AllBooksPrice")]
-        public decimal GetAllBooksPrice()
+        public  async Task<IActionResult> GetAllBooksPrice()
         {
-            return _bookService.GetAllBooksPrice();
+            return Ok(await _bookService.GetAllBooksPrice());
         }
         [HttpPost("AddBooks")]
-        public void AddBooks([FromBody] List<Book> books)
+        public async Task<IActionResult> AddBooks([FromBody] List<Book> books)
         {
-            _bookService.AddBooks(books);
+            await _bookService.AddBooks(books);
+            return Ok();
         }
     }
 }
