@@ -26,34 +26,89 @@ namespace BookStore.Api.Controllers
         [HttpGet("BooksByPublisher")]
         public async Task<IActionResult> GetBooksByPublisher()
         {
-            return Ok(_bookService.GetBooksByPublisher());
+            try
+            {
+                return Ok(await _bookService.GetBooksByPublisher());
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return StatusCode(500, ex.Message);
+            }
+            
         }
         [HttpGet("BooksByPublisher")]
         public async Task<IActionResult> GetBooksByAuthor()
         {
-            return Ok(await _bookService.GetBooksByAuthor());
+            try
+            {
+                return Ok(await _bookService.GetBooksByAuthor());
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return StatusCode(500, ex.Message);
+            }
+            
         }
         [HttpGet("BooksByPublisherUsingSproc")]
         public async Task<IActionResult> GetBooksByPublisherUsingSproc()
         {
-            return Ok(await _bookService.GetBooksByPublisherUsingSproc());
+            try
+            {
+                return Ok(await _bookService.GetBooksByPublisherUsingSproc());
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return StatusCode(500, ex.Message);
+            }
+            
         }
         [HttpGet("BooksByAuthorUsingSproc")]
         public async Task<IActionResult> GetBooksByAuthorUsingSproc()
         {
-            return Ok(await _bookService.GetBooksByAuthorUsingSproc());
+            try
+            {
+                return Ok(await _bookService.GetBooksByAuthorUsingSproc());
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [HttpGet("AllBooksPrice")]
         public  async Task<IActionResult> GetAllBooksPrice()
         {
-            return Ok(await _bookService.GetAllBooksPrice());
+            try
+            {
+                return Ok(await _bookService.GetAllBooksPrice());
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return StatusCode(500, ex.Message);
+            }
         }
         [HttpPost("AddBooks")]
         public async Task<IActionResult> AddBooks([FromBody] List<Book> books)
         {
-            await _bookService.AddBooks(books);
-            return Ok();
+            try
+            {
+                if(books == null)
+                {
+                    return BadRequest("Null Parameter");
+                }
+                await _bookService.AddBooks(books);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return StatusCode(500, ex.Message);
+            }
         }
     }
 }

@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="BookStore.Database.dll" />
-			<Metadata Name="FileName" Value="C:\USERS\TYLER\SOURCE\REPOS\BOOKSTORE\BOOKSTORE.DATABASE\OBJ\DEBUG\BOOKSTORE.DATABASE.DLL" />
+			<Metadata Name="FileName" Value="C:\USERS\TYLER\DOCUMENTS\GITHUB\BOOKSTORE\BOOKSTORE.DATABASE\OBJ\DEBUG\BOOKSTORE.DATABASE.DLL" />
 			<Metadata Name="AssemblyName" Value="BookStore.Database" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\Users\tyler\source\repos\BookStore\BookStore.Database\obj\Debug\BookStore.Database.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Database\obj\Debug\BookStore.Database.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>
@@ -156,6 +156,37 @@
 									<Relationship Name="Type">
 										<Entry>
 											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Book].[PageRange]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Book].[PublisherDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
 										</Entry>
 									</Relationship>
 								</Element>

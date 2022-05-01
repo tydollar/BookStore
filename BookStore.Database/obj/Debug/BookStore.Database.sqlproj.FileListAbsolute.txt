@@ -14,3 +14,7 @@ C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Database\bin\Debug\BookStore
 C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Database\obj\Debug\BookStore.Database.sqlproj.AssemblyReference.cache
 C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Database\obj\Debug\BookStore.Database.dll
 C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Database\obj\Debug\BookStore.Database.pdb
+C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Database\obj\Debug\Model.xml
+C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Database\obj\Debug\refactor.xml
+C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Database\obj\Debug\postdeploy.sql
+C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Database\obj\Debug\predeploy.sql

@@ -5,6 +5,8 @@
 	[Title] Varchar(256),
 	[AuthorLastName] Varchar(256),
 	[AuthorFirstName] Varchar(256),
-	[Price] decimal
+	[Price] decimal, 
+    [PageRange] VARCHAR(50) NULL, 
+    [PublisherDate] DATETIME NULL
 
 )
