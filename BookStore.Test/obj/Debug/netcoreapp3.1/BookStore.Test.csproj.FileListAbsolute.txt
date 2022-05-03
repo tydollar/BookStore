@@ -285,3 +285,7 @@ C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Test\obj\Debug\netcoreapp3.1
 C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Test\obj\Debug\netcoreapp3.1\BookStore.Test.dll
 C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Test\obj\Debug\netcoreapp3.1\BookStore.Test.pdb
 C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Test\obj\Debug\netcoreapp3.1\BookStore.Test.genruntimeconfig.cache
+C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Test\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Test\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Test\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\tyler\Documents\GitHub\BookStore\BookStore.Test\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll

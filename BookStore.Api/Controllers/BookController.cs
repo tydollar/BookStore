@@ -35,9 +35,9 @@ namespace BookStore.Api.Controllers
                 _logger.LogError(ex.Message);
                 return StatusCode(500, ex.Message);
             }
-            
+
         }
-        [HttpGet("BooksByPublisher")]
+        [HttpGet("BooksByAuthor")]
         public async Task<IActionResult> GetBooksByAuthor()
         {
             try
@@ -49,7 +49,7 @@ namespace BookStore.Api.Controllers
                 _logger.LogError(ex.Message);
                 return StatusCode(500, ex.Message);
             }
-            
+
         }
         [HttpGet("BooksByPublisherUsingSproc")]
         public async Task<IActionResult> GetBooksByPublisherUsingSproc()
@@ -63,7 +63,7 @@ namespace BookStore.Api.Controllers
                 _logger.LogError(ex.Message);
                 return StatusCode(500, ex.Message);
             }
-            
+
         }
         [HttpGet("BooksByAuthorUsingSproc")]
         public async Task<IActionResult> GetBooksByAuthorUsingSproc()
@@ -80,7 +80,7 @@ namespace BookStore.Api.Controllers
         }
 
         [HttpGet("AllBooksPrice")]
-        public  async Task<IActionResult> GetAllBooksPrice()
+        public async Task<IActionResult> GetAllBooksPrice()
         {
             try
             {
@@ -97,7 +97,7 @@ namespace BookStore.Api.Controllers
         {
             try
             {
-                if(books == null)
+                if (books == null)
                 {
                     return BadRequest("Null Parameter");
                 }
